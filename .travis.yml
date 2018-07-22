@@ -20,6 +20,7 @@ branches:
   only:
     - master
 install:
+  - sudo sysctl -w net.ipv6.conf.all.disable_ipv6=0
   - sysctl -a
   - ifconfig
   - python -V
