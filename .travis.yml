@@ -13,14 +13,13 @@ matrix:
   include:
    - python: "3.7"
      dist: xenial
-     before_script: |
+     before_install: |
        sudo sysctl -w net.ipv6.conf.all.disable_ipv6=0
        sudo sh -c 'echo "::1		localhost" >> /etc/hosts'
 branches:
   only:
     - master
 install:
-  - sudo sysctl -w net.ipv6.conf.all.disable_ipv6=0
   - sysctl -a
   - ifconfig
   - python -V
