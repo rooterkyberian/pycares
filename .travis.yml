@@ -20,6 +20,7 @@ branches:
   only:
     - master
 install:
+  - sysctl -a
   - ifconfig
   - python -V
   - python setup.py install
