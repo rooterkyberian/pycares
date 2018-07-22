@@ -16,11 +16,11 @@ matrix:
      before_script: |
        sudo sh -c 'echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6'
        sudo sh -c 'echo "::1		localhost" >> /etc/hosts'
-       sudo ifconfig
 branches:
   only:
     - master
 install:
+  - ifconfig
   - python -V
   - python setup.py install
 script:
