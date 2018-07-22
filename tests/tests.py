@@ -48,6 +48,7 @@ class DNSTest(unittest.TestCase):
             self.result, self.errorno = result, errorno
         self.channel.gethostbyaddr('::1', cb)
         self.wait()
+        print([self.errorno, self.result))
         self.assertEqual(self.errorno, None)
         self.assertEqual(type(self.result), pycares.ares_host_result)
 
