@@ -15,7 +15,7 @@ matrix:
      dist: xenial
      before_install: |
        sudo sysctl -w net.ipv6.conf.all.disable_ipv6=0
-       sudo sh -c 'echo "::1		localhost" >> /etc/hosts'
+       sudo sh -c 'echo "::1	 ip6-localhost ip6-loopback\nfe00::0	ip6-localnet\nff00::0	ip6-mcastprefix\nff02::1	ip6-allnodes\nff02::2	ip6-allrouters" >> /etc/hosts'
 branches:
   only:
     - master
